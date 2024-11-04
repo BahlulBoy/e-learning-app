@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:ayo_belajar/resource/main_color.dart';
+import 'package:ayo_belajar/routes/list_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -12,7 +13,7 @@ class SplashView extends StatelessWidget {
     Timer(
       const Duration(seconds: 5),
       () {
-        Navigator.pushReplacementNamed(context, '/login');
+        Navigator.pushReplacementNamed(context, ListRoutes.login);
       },
     );
     return Scaffold(

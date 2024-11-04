@@ -1,5 +1,7 @@
+import 'package:ayo_belajar/components/input/form_input_auth.dart';
 import 'package:ayo_belajar/components/other/yellow_dot.dart';
 import 'package:ayo_belajar/resource/main_color.dart';
+import 'package:ayo_belajar/routes/list_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -63,90 +65,20 @@ class LoginView extends StatelessWidget {
                         SizedBox(
                           height: 48.h,
                         ),
-                        TextFormField(
-                          style: const TextStyle(
-                            color: MainColor.primaryWhite,
-                          ),
-                          keyboardType: TextInputType.emailAddress,
-                          decoration: InputDecoration(
-                            hintText: 'your email',
-                            hintStyle: TextStyle(
-                              fontSize: 14.sp,
-                              color: MainColor.darkTextColor,
-                            ),
-                            labelText: 'Email',
-                            labelStyle: TextStyle(
-                              fontSize: 12.sp,
-                              color: MainColor.primaryWhite,
-                            ),
-                            floatingLabelBehavior: FloatingLabelBehavior.always,
-                            border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(
-                                10.r,
-                              ),
-                              borderSide: const BorderSide(
-                                color: MainColor.strokeColor,
-                              ),
-                            ),
-                            enabledBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(
-                                10.r,
-                              ),
-                              borderSide: const BorderSide(
-                                color: MainColor.strokeColor,
-                              ),
-                            ),
-                            contentPadding: EdgeInsets.symmetric(
-                              vertical: 8.h,
-                              horizontal: 14.w,
-                            ),
-                            filled: true,
-                            fillColor: MainColor.secondaryBackgrounColor,
-                          ),
+                        FormInputAuth(
+                          hintText: 'your email',
+                          labelText: 'Email',
+                          keyboardType: TextInputType.visiblePassword,
+                          onChanged: (value) {},
                         ),
                         SizedBox(
                           height: 38.h,
                         ),
-                        TextFormField(
-                          style: const TextStyle(
-                            color: MainColor.primaryWhite,
-                          ),
+                        FormInputAuth(
+                          hintText: 'your password',
+                          labelText: 'Password',
                           keyboardType: TextInputType.visiblePassword,
-                          decoration: InputDecoration(
-                            hintText: 'your password',
-                            hintStyle: TextStyle(
-                              fontSize: 14.sp,
-                              color: MainColor.darkTextColor,
-                            ),
-                            labelText: 'Password',
-                            labelStyle: TextStyle(
-                              fontSize: 12.sp,
-                              color: MainColor.primaryWhite,
-                            ),
-                            floatingLabelBehavior: FloatingLabelBehavior.always,
-                            border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(
-                                10.r,
-                              ),
-                              borderSide: const BorderSide(
-                                color: MainColor.strokeColor,
-                              ),
-                            ),
-                            enabledBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(
-                                10.r,
-                              ),
-                              borderSide: const BorderSide(
-                                color: MainColor.strokeColor,
-                              ),
-                            ),
-                            contentPadding: EdgeInsets.symmetric(
-                              vertical: 8.h,
-                              horizontal: 14.w,
-                            ),
-                            filled: true,
-                            fillColor: MainColor.secondaryBackgrounColor,
-                          ),
+                          onChanged: (value) {},
                         ),
                         SizedBox(
                           height: 18.h,
@@ -241,7 +173,9 @@ class LoginView extends StatelessWidget {
                           width: 4.w,
                         ),
                         InkWell(
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.pushNamed(context, ListRoutes.register);
+                          },
                           child: Text(
                             'Sign up',
                             style: TextStyle(
@@ -253,7 +187,7 @@ class LoginView extends StatelessWidget {
                         ),
                       ],
                     ),
-                  )
+                  ),
                 ],
               ),
             ),
