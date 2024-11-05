@@ -9,11 +9,16 @@ class FormInputAuth extends StatelessWidget {
     this.labelText,
     this.keyboardType,
     this.onChanged,
+    this.suffix,
+    this.prefix,
+    this.isHide = false,
   });
 
   final String? hintText, labelText;
   final TextInputType? keyboardType;
   final void Function(String value)? onChanged;
+  final Widget? suffix, prefix;
+  final bool isHide;
 
   @override
   Widget build(BuildContext context) {
@@ -56,7 +61,10 @@ class FormInputAuth extends StatelessWidget {
         ),
         filled: true,
         fillColor: MainColor.secondaryBackgrounColor,
+        suffixIcon: suffix,
+        prefixIcon: prefix,
       ),
+      obscureText: isHide,
       onChanged: onChanged,
     );
   }

@@ -10,8 +10,8 @@ class MainRoutes {
   Map<String, Widget Function(BuildContext)> addRoutes(BuildContext context) {
     return {
       ListRoutes.splash: (context) => const SplashView(),
-      ListRoutes.login: (context) => const LoginView(),
-      ListRoutes.register: (context) => const RegisterPage(),
+      ListRoutes.login: (context) => const LoginContainer(),
+      ListRoutes.register: (context) => const RegisterContainer(),
     };
   }
 }

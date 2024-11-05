@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (context, child) => BlocProvider(
-        create: (_) => GlobalCubit(const GlobalState()),
+        create: (_) => GlobalCubit(const GlobalState(name: 'haha')),
         child: MaterialApp(
           debugShowMaterialGrid: false,
           debugShowCheckedModeBanner: false,

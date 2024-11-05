@@ -1,8 +1,28 @@
 import 'package:ayo_belajar/components/input/form_input_auth.dart';
 import 'package:ayo_belajar/components/other/yellow_dot.dart';
+import 'package:ayo_belajar/page/register_page/state/register_cubit.dart';
+import 'package:ayo_belajar/page/register_page/state/register_state.dart';
 import 'package:ayo_belajar/resource/main_color.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+class RegisterContainer extends StatefulWidget {
+  const RegisterContainer({super.key});
+
+  @override
+  State<RegisterContainer> createState() => _RegisterContainer();
+}
+
+class _RegisterContainer extends State<RegisterContainer> {
+  @override
+  Widget build(BuildContext context) {
+    return BlocProvider(
+      create: (context) => RegisterCubit(const RegisterState()),
+      child: const RegisterPage(),
+    );
+  }
+}
 
 class RegisterPage extends StatelessWidget {
   const RegisterPage({super.key});
@@ -57,7 +77,8 @@ class RegisterPage extends StatelessWidget {
                           hintText: 'your username',
                           labelText: 'Username',
                           keyboardType: TextInputType.text,
-                          onChanged: (value) {},
+                          onChanged:
+                              context.read<RegisterCubit>().onChangeUsername,
                         ),
                         SizedBox(
                           height: 38.h,
@@ -66,7 +87,8 @@ class RegisterPage extends StatelessWidget {
                           hintText: 'your email',
                           labelText: 'Email',
                           keyboardType: TextInputType.emailAddress,
-                          onChanged: (value) {},
+                          onChanged:
+                              context.read<RegisterCubit>().onChangeEmail,
                         ),
                         SizedBox(
                           height: 38.h,
@@ -75,7 +97,9 @@ class RegisterPage extends StatelessWidget {
                           hintText: 'your password',
                           labelText: 'Password',
                           keyboardType: TextInputType.visiblePassword,
-                          onChanged: (value) {},
+                          onChanged:
+                              context.read<RegisterCubit>().onChangePassword,
+                          isHide: true,
                         ),
                         SizedBox(
                           height: 38.h,
@@ -84,7 +108,8 @@ class RegisterPage extends StatelessWidget {
                           hintText: '08xxxxxxxx',
                           labelText: 'Phone',
                           keyboardType: TextInputType.phone,
-                          onChanged: (value) {},
+                          onChanged:
+                              context.read<RegisterCubit>().onChangePhone,
                         ),
                         SizedBox(
                           height: 40.h,
@@ -92,7 +117,7 @@ class RegisterPage extends StatelessWidget {
                         SizedBox(
                           width: double.infinity,
                           child: TextButton(
-                            onPressed: () {},
+                            onPressed: context.read<RegisterCubit>().onRegister,
                             style: const ButtonStyle(
                               backgroundColor: WidgetStatePropertyAll(
                                 MainColor.primaryColor,
@@ -129,7 +154,9 @@ class RegisterPage extends StatelessWidget {
                           width: 4.w,
                         ),
                         InkWell(
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.pop(context);
+                          },
                           child: Text(
                             'Log in',
                             style: TextStyle(
