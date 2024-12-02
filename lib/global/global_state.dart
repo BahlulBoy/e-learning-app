@@ -1,20 +1,12 @@
 import 'package:equatable/equatable.dart';
 
 class GlobalState extends Equatable {
-  const GlobalState({
-    this.name,
-  });
+  const GlobalState();
 
-  final String? name;
-
-  GlobalState copyWith({
-    final String? name,
-  }) {
-    return GlobalState(
-      name: name ?? this.name,
-    );
+  GlobalState copyWith() {
+    return const GlobalState();
   }
 
   @override
-  List<Object?> get props => [name];
+  List<Object?> get props => [];
 }

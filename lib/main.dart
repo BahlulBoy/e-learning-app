@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (context, child) => BlocProvider(
-        create: (_) => GlobalCubit(const GlobalState(name: 'haha')),
+        create: (_) => GlobalCubit(const GlobalState()),
         child: MaterialApp(
           debugShowMaterialGrid: false,
           debugShowCheckedModeBanner: false,
@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
             ),
             useMaterial3: true,
           ),
-          initialRoute: '/',
+          initialRoute: '/main',
           routes: const MainRoutes().addRoutes(context),
         ),
       ),

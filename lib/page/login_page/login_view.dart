@@ -1,3 +1,4 @@
+import 'package:ayo_belajar/components/button/primary_text_btn.dart';
 import 'package:ayo_belajar/components/input/form_input_auth.dart';
 import 'package:ayo_belajar/components/other/yellow_dot.dart';
 import 'package:ayo_belajar/page/login_page/state/login_cubit.dart';
@@ -157,16 +158,6 @@ class LoginView extends StatelessWidget {
                                   ),
                                 ],
                               ),
-                              // InkWell(
-                              //   child: Text(
-                              //     'forgot password?',
-                              //     style: TextStyle(
-                              //       fontSize: 10.sp,
-                              //       color: MainColor.primaryWhite,
-                              //     ),
-                              //   ),
-                              //   onTap: () {},
-                              // ),
                             ],
                           ),
                         ),
@@ -175,21 +166,11 @@ class LoginView extends StatelessWidget {
                         ),
                         SizedBox(
                           width: double.infinity,
-                          child: TextButton(
-                            onPressed: context.read<LoginCubit>().onLogin,
-                            style: const ButtonStyle(
-                              backgroundColor: WidgetStatePropertyAll(
-                                MainColor.primaryColor,
-                              ),
-                            ),
-                            child: Text(
-                              'log in',
-                              style: TextStyle(
-                                color: MainColor.backgroundColor,
-                                fontSize: 14.sp,
-                                fontWeight: FontWeight.w800,
-                              ),
-                            ),
+                          child: PrimaryTextBtn(
+                            'log in',
+                            () {
+                              context.read<LoginCubit>().onLogin();
+                            },
                           ),
                         ),
                       ],
