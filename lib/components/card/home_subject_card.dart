@@ -15,8 +15,8 @@ class HomeSubjectCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 125.w,
-      height: 125.w,
+      width: 110.w,
+      height: 110.w,
       decoration: BoxDecoration(
         color: MainColor.strokeColor,
         border: Border.all(
@@ -35,16 +35,21 @@ class HomeSubjectCard extends StatelessWidget {
               MainColor.primaryWhite,
               BlendMode.srcIn,
             ),
-            width: 45.w,
-            height: 45.w,
+            width: 40.w,
+            height: 40.w,
           ),
-          SizedBox(height: 18.h),
-          Text(
-            name,
-            style: TextStyle(
-              fontSize: 12.sp,
-              fontWeight: FontWeight.w700,
-              color: MainColor.primaryWhite,
+          SizedBox(height: 10.h),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 8.w),
+            child: Text(
+              name,
+              style: TextStyle(
+                fontSize: 12.sp,
+                fontWeight: FontWeight.w700,
+                color: MainColor.primaryWhite,
+              ),
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
             ),
           ),
         ],

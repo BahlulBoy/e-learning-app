@@ -8,5 +8,6 @@ class MainColor {
   static const darkYellow = Color(0xFFFF9900);
   static const primaryWhite = Color(0xFFFFFFFF);
   static const secondaryWhite = Color.fromARGB(255, 228, 228, 228);
+  static const thirdWhite = Color.fromARGB(255, 160, 160, 160);
   static const darkTextColor = Color(0xFF8787B0);
 }

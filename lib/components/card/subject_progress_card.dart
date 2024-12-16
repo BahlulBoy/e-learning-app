@@ -24,7 +24,7 @@ class SubjectProgressCard extends StatelessWidget {
         color: MainColor.strokeColor,
         border: Border.all(
           color: MainColor.darkTextColor,
-          width: 3,
+          width: 2,
         ),
         borderRadius: BorderRadius.circular(10.r),
       ),
@@ -32,7 +32,7 @@ class SubjectProgressCard extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           Padding(
-            padding: EdgeInsets.all(16.w),
+            padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 14.h),
             child: Row(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -47,14 +47,14 @@ class SubjectProgressCard extends StatelessWidget {
                         Text(
                           title,
                           style: TextStyle(
-                            fontSize: 16.sp,
+                            fontSize: 12.sp,
                             fontWeight: FontWeight.w700,
                             color: MainColor.primaryWhite,
                             overflow: TextOverflow.ellipsis,
                           ),
                           maxLines: 1,
                         ),
-                        SizedBox(height: 2.h),
+                        SizedBox(height: 1.h),
                         Text(
                           subject,
                           style: TextStyle(
@@ -70,7 +70,7 @@ class SubjectProgressCard extends StatelessWidget {
                 Text(
                   '$percentageDetail%',
                   style: TextStyle(
-                    fontSize: 16.sp,
+                    fontSize: 12.sp,
                     fontWeight: FontWeight.w700,
                     color: MainColor.primaryWhite,
                   ),
@@ -86,14 +86,14 @@ class SubjectProgressCard extends StatelessWidget {
               children: [
                 Container(
                   width: double.infinity,
-                  height: 17.h,
+                  height: 8.h,
                   color: MainColor.secondaryBackgrounColor,
                 ),
                 FractionallySizedBox(
                   widthFactor: percentageData,
                   child: Container(
                     width: 160.w,
-                    height: 17.h,
+                    height: 8.h,
                     color: MainColor.primaryColor,
                   ),
                 ),
