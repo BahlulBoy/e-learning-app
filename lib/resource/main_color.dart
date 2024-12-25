@@ -10,4 +10,5 @@ class MainColor {
   static const secondaryWhite = Color.fromARGB(255, 228, 228, 228);
   static const thirdWhite = Color.fromARGB(255, 160, 160, 160);
   static const darkTextColor = Color(0xFF8787B0);
+  static const darkGreen = Color(0xFF1E9E3A);
 }

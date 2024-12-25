@@ -1,12 +1,14 @@
 import 'package:ayo_belajar/global/global_cubit.dart';
 import 'package:ayo_belajar/global/global_state.dart';
 import 'package:ayo_belajar/resource/main_color.dart';
+import 'package:ayo_belajar/routes/list_routes.dart';
 import 'package:ayo_belajar/routes/main_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }
 
@@ -31,7 +33,7 @@ class MyApp extends StatelessWidget {
             ),
             useMaterial3: true,
           ),
-          initialRoute: '/main',
+          initialRoute: ListRoutes.listSubject,
           routes: const MainRoutes().addRoutes(context),
         ),
       ),

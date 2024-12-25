@@ -1,3 +1,5 @@
+import 'package:ayo_belajar/page/list_course_page/list_course_view.dart';
+import 'package:ayo_belajar/page/list_subject_page/list_subject_view.dart';
 import 'package:ayo_belajar/page/login_page/login_view.dart';
 import 'package:ayo_belajar/page/main_page/main_page.dart';
 import 'package:ayo_belajar/page/register_page/register_page.dart';
@@ -14,6 +16,8 @@ class MainRoutes {
       ListRoutes.login: (context) => const LoginContainer(),
       ListRoutes.register: (context) => const RegisterContainer(),
       ListRoutes.main: (context) => const MainContainer(),
+      ListRoutes.listCourse: (context) => const ListCourseContainer(),
+      ListRoutes.listSubject: (context) => const ListSubjectContainer(),
     };
   }
 }
